@@ -1,0 +1,41 @@
+.banner{
+    background-image: url('../Images/landing.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: myanimation 12s infinite;
+}
+.banner h1{
+    padding-top: 20px;
+    font-family: 'Roboto', sans-serif;  
+    color: whitesmoke;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 77px;
+}
+
+.banner h4{
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke;
+    font-weight: 400;
+    font-size: 24px;    
+    line-height: 29px;
+}
+
+.banner p{
+    font-family: 'Roboto', 'sans-serif';
+    color: whitesmoke;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+@keyframes myanimation{
+    0%{background-image: url('../Images/banner0.jpeg');}
+    33%{background-image: url('../Images/banner1.webp');}
+    66%{background-image: url('../Images/banner2.jpeg');}
+    100%{background-image: url('../Images/banner0.jpeg');}
+}
