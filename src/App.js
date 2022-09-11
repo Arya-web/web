@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Floating_Btn, Banner } from './components';
+import { Floating_Btn, Banner, About, Navbar, Domains } from './components';
 
 function App() {
   return (
@@ -11,6 +11,9 @@ function App() {
             <>
               <Banner />
               <Floating_Btn />
+              <Navbar />
+              <About />
+              <Domains />
               <div style={{height: '500px'}}></div>
             </>
           } />

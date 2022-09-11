@@ -1,0 +1,23 @@
+.about{
+    margin: 150px 0;
+}
+
+.text-head {
+    text-align: center;
+    font-family: "Darker Grotesque";
+    font-size: 4.1vw;
+    font-weight: 900;
+}
+
+.text-head .accelerate {
+    color: #FF5200;
+}
+
+.text-body {
+    text-align: justify;
+    font-size: 14px;
+    font-family: "Manrope";
+    margin-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
