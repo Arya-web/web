@@ -1,27 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Domains.css';
 import Design from "../Images/design.jpg";
 import Software from "../Images/software.jpg";
 import Hardware from "../Images/hardware.jpg";
+import DomainText from './DomainText';
+import { domain } from './DomainData';
 
 const Domains = () => {
 
-  const domain = {
-    elem: [
-      {
-        title: "Design",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis consectetur ac amet, ullamcorper blandit tortor, tristique. At etornare orci felis, curabitur phasellus ac. Placerat tortorfermentum, in vestibulum. Cursus cursus est quam sit faucibus odio.",
-      },
-      {
-        title: "Software",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis consectetur ac amet, ullamcorper blandit tortor, tristique. At etornare orci felis, curabitur phasellus ac. Placerat tortorfermentum, in vestibulum. Cursus cursus est quam sit faucibus odio.",
-      },
-      {
-        title: "Hardware",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis consectetur ac amet, ullamcorper blandit tortor, tristique. At etornare orci felis, curabitur phasellus ac. Placerat tortorfermentum, in vestibulum. Cursus cursus est quam sit faucibus odio.",
-      },
-    ],
-  };
+  const [Hover, setHover] = useState("Software");
+
+  const mouseEnter = (e) => {
+    setHover(Hover => Hover===e.target.alt ? Hover: e.target.alt);
+  }
 
   return (
     <>
@@ -31,26 +22,35 @@ const Domains = () => {
         </h1>
         <div className="wing_images">
           <div className="wing-image">
-            <img src={Design} alt="Deign image" className="image1" />
+            <img
+              src={Design}
+              alt="Design"
+              className={Hover === "Design" ? "wing-selected" : "image1"}
+              onMouseEnter={mouseEnter}
+            />
           </div>
           <div className="wing-image">
-            <img src={Software} alt="Deign image" className="image1" />
+            <img
+              src={Software}
+              alt="Software"
+              className={Hover === "Software" ? "wing-selected" : "image1"}
+              onMouseEnter={mouseEnter}
+            />
           </div>
           <div className="wing-image">
-            <img src={Hardware} alt="Deign image" className="image1" />
+            <img
+              src={Hardware}
+              alt="Hardware"
+              className={Hover === "Hardware" ? "wing-selected" : "image1"}
+              onMouseEnter={mouseEnter}
+            />
           </div>
         </div>
-        <div className="soft_wing invisible">
-          <div className="soft_title">
-            <span className="soft">Software</span> Wing
-          </div>
-          <div className="soft_text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis,
-            consectetur ac amet, ullamcorper blandit tortor, tristique. At et
-            ornare orci felis, curabitur phasellus ac. Placerat tortor
-            fermentum, in vestibulum. Cursus cursus est quam sit faucibus odio.
-          </div>
-        </div>
+        {domain
+          .filter((elem) => elem.title === Hover)
+          .map((e) => (
+            <DomainText key={e.title} obj={e} />
+          ))}
       </div>
     </>
   );

@@ -22,7 +22,7 @@
 
 .wing_images .image1 {
     padding-top: 20px;
-    height: 60%;
+    height: 65%;
     cursor: pointer;
     transition: height 0.3s ease;
 	-webkit-filter: grayscale(100%);
@@ -57,8 +57,17 @@
 }
 
 .wing_images .image1:hover{
-    height: 70%;
+    height: 80%;
     -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.wing-selected{
+    padding-top: 20px;
+    height: 80%;
+    cursor: pointer;
+    transition: height 0.3s ease;
+	-webkit-filter: grayscale(0);
 	filter: grayscale(0);
 }
 
